@@ -5,9 +5,9 @@ using System.Web;
 
 namespace IVO.Mvc.SpionShop.Web.Models
 {
-    public class Categorie
+    public class Product
     {
         public string Naam { get; set; }
-
+        public Categorie Categorie { get; set; }
     }
 }

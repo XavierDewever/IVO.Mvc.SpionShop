@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IVO.Mvc.SpionShop.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,19 +12,28 @@ namespace IVO.Mvc.SpionShop.Web.Controllers
         // GET: Winkel
         public ActionResult Index()
         {
-            return View();
+            List<Categorie> catlist = new List<Categorie>
+            {
+            new Categorie { Naam = "Algemeen" },
+            new Categorie { Naam = "Afleiding" },
+            new Categorie { Naam = "Communicatie" }
+            };
+
+            return View(catlist);
         }
 
         // GET: /Winkel/Producten
         public ActionResult Producten(string categorie)
         {
-            return View();
+            Categorie cat = new Categorie { Naam = categorie };
+            return View(cat);
         }
 
-        // GET: /Winkel/Details
-        public ActionResult Details()
+        // GET: /Winkel/Details/7
+        public ActionResult Details(int id)
         {
-            return View();
+            var product = new Product { Naam = "Product nummertje " + id };
+            return View(product);
         }
     }
 }

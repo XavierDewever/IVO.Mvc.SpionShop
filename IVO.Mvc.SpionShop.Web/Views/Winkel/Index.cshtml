@@ -1,0 +1,15 @@
+﻿@model IEnumerable<IVO.Mvc.SpionShop.Web.Models.Categorie>
+
+@{
+    ViewBag.Title = "Winkel";
+}
+
+<h2>Categorieënlijst</h2>
+<p>Selecteer uit @Model.Count() categorieën:</p>
+<ul>
+    @foreach (var cat in Model)
+    {
+        <li><a href="/Winkel/Producten?categorie=@cat.Naam">@cat.Naam</a></li>
+    }
+</ul>
+
